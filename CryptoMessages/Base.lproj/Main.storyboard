@@ -105,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
-        <!--Messages View-->
+        <!--Messages-->
         <scene sceneID="l3c-W1-s6l">
             <objects>
-                <viewController id="DvK-WK-pgL" userLabel="Messages View" sceneMemberID="viewController">
+                <viewController id="DvK-WK-pgL" userLabel="Messages" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CDF-dj-sDY"/>
                         <viewControllerLayoutGuide type="bottom" id="spb-gv-f9o"/>
@@ -125,7 +125,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iwd-Hz-Br3" id="REp-YZ-IAS">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>

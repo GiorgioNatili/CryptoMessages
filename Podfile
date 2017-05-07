@@ -5,10 +5,11 @@ target 'CryptoMessages' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   # Pods for CryptoMessages
-  pod 'AFNetworking', '~> 2.6'
+  pod 'Alamofire', '~> 4.4'
+  pod 'RxSwift', '~> 3.4'
   pod 'ORStackView', '~> 3.0'
-  pod 'SwiftyJSON', '~> 2.3'
-  pod 'SwiftValidator', '3.0.1' 
+  pod 'SwiftyJSON', '~> 3.1'
+  pod 'SwiftValidators'
 
   target 'CryptoMessagesTests' do
     inherit! :search_paths

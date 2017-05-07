@@ -711,6 +711,7 @@
 				BA6BD04C1EBF5CB600B8AAC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA6BD04D1EBF5CB600B8AAC5 /* Build configuration list for PBXNativeTarget "CryptoMessagesTests" */ = {
 			isa = XCConfigurationList;
@@ -719,6 +720,7 @@
 				BA6BD04F1EBF5CB600B8AAC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA6BD0501EBF5CB600B8AAC5 /* Build configuration list for PBXNativeTarget "CryptoMessagesUITests" */ = {
 			isa = XCConfigurationList;
@@ -727,6 +729,7 @@
 				BA6BD0521EBF5CB600B8AAC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
