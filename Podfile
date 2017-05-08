@@ -7,13 +7,18 @@ target 'CryptoMessages' do
   # Pods for CryptoMessages
   pod 'Alamofire', '~> 4.4'
   pod 'RxSwift', '~> 3.4'
+  pod 'RxCocoa'
+  pod 'RxAlamofire'
   pod 'ORStackView', '~> 3.0'
   pod 'SwiftyJSON', '~> 3.1'
   pod 'SwiftValidators'
+  pod 'ObjectMapper', '~> 2.2'
 
   target 'CryptoMessagesTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Quick', '~> 1.1'
+    pod 'Nimble', '~> 7.0'
   end
 
   target 'CryptoMessagesUITests' do

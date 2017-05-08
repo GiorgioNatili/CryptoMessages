@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  CryptoMessages
+
+  Created by Giorgio Natili on 5/7/17.
+  Copyright © 2017 Giorgio Natili. All rights reserved.
+*/
+
+"USERNAME"                      = "Username";
+"MISSING_USERNAME"              = "Username is required";
+"PASSWORD"                      = "Password";
+"MISSING_PASSWORD"              = "Password is required";
+"LOGIN"                         = "Login";
