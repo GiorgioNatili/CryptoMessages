@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct UserStatus {
+
+    var authenticated: Bool
+}

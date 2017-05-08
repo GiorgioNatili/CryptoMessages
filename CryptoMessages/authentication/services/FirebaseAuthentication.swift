@@ -11,7 +11,9 @@ import ObjectMapper
 import RxAlamofire
 import RxSwift
 
-class AuthenticationServices: AuthenticagionServices {
+class FirebaseAuthentication: AuthenticagionServices {
+    
+    let session = URLSession.shared
     
     var fakeAuthentication:String
     var fakeLogout:String
@@ -23,13 +25,29 @@ class AuthenticationServices: AuthenticagionServices {
     }
     
     // MARK: - AuthenticationServices implementation
-    func auhtenticate(user: User) -> Observable<AnyObject> {
+    func auhtenticate(user: User) -> Observable<User> {
         
-        return JSON(.GET, fakeAuthentication).observeOn(MainScheduler.instance)
+        return Observable.create { observer in
+            
+            json(.get, self.fakeAuthentication)
+                .subscribe({ data in
+                    
+                    // TODO handle the http codes
+                    let authenticatedUser = User(username: user.username, password: "", status: UserStatus(authenticated: true))
+                    observer.onNext(authenticatedUser)
+                })
+        }
     }
     
-    func logout() -> Observable<AnyObject> {
+    func logout() -> Observable<User> {
         
-        return JSON(.GET, fakeLogout).observeOn(MainScheduler.instance)
+        return Observable.create { observer in
+            
+            json(.get, self.fakeLogout)
+                .subscribe({ data in
+                    
+                    observer.onNext(User(username: "", password: ""))
+                })
+        }
     }
 }

@@ -10,6 +10,14 @@ import Foundation
 
 struct User {
     
-    var name:String
-    var password:String
+    var username: String
+    var password: String
+    var status: UserStatus?
+    
+    init(username: String, password: String, status: UserStatus? = nil) {
+        
+        self.username = username
+        self.password = password
+        self.status = status
+    }
 }
