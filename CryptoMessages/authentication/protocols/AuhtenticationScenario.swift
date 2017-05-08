@@ -18,7 +18,7 @@ protocol AuthenticationPresenter {
      * Communication VIEW -> PRESENTER
      * (how the presenter should be known from the view)
      */
-    func authenticate(username: String, _ password: String)
+    func authenticate(username: String, password: String)
     func resetPassword(email: String)
 }
 

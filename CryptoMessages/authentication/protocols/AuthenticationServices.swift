@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import RxSwift
+
+protocol AuthenticagionServices {
+    
+    func auhtenticate(user: User) -> Observable<User>
+    func logout() -> Observable<User>
+}
