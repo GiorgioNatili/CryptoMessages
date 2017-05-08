@@ -8,19 +8,54 @@
 
 import UIKit
 
-class AuthenticationViewController: UIViewController {
+class AuthenticationViewController: UIViewController, AuthenticationView {
 
+    // MARK: - UI items
+    @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var login: UIButton!
+    @IBOutlet weak var errorMessage: UILabel!
+    
+    // MARK: - Instance members
+    var presenter: AuthenticationPresenter?
+    // var validator: Validator?
+  //  var validationDelegate: LoginInputValidation?
+    
+    // MARK: - Livecycle override
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let wiring = AuthenticationWiring(self)
+        wiring.configure()
+        
+        updateContent()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Private methods
+    func updateContent() {
+        
+        welcomeLabel.text = "WELCOME".localized
+        usernameLabel.text = "LOGIN".localized
+        passwordLabel.text = "PASSWORD".localized
+        errorMessage.text = ""
+        
+        login.setTitle("LOGIN".localized, for: .normal)
+    }
+    
+    // MARK: - User interaction
+    @IBAction func doLogin(sender: AnyObject) {
+        
+        presenter!.authenticate(username: username.text!, password: password.text!)
+    }
 
     /*
     // MARK: - Navigation
@@ -32,4 +67,26 @@ class AuthenticationViewController: UIViewController {
     }
     */
 
+    // MARK: - AuthenticationView implementation
+    func showErrorMessage(message: String) {
+     
+        errorMessage.text = message
+    }
+    
+    func resetErrorMessage() {
+        
+        errorMessage.text = ""
+    }
+    
+    func showAuthenticationStatus(status: String) {
+        
+        errorMessage.text = status
+    }
+    
+    func enableUserInterface(status:  Bool) {
+     
+        username.isEnabled = status
+        password.isEnabled = status
+        login.isEnabled = status
+    }
 }

@@ -31,6 +31,7 @@ protocol AuthenticationView {
      * (how the view should be known from the presenter)
      */
     func showErrorMessage(message: String)
+    func resetErrorMessage()
     func showAuthenticationStatus(status: String)
     func enableUserInterface(status:  Bool)
 }
