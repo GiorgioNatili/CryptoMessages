@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+class AuthenticationInitizalization: NSObject {
+    
+    // Connect with object on storyboard
+    @IBOutlet weak var authenticationViewController: AuthenticationViewController!
+    
+    override func awakeFromNib() {
+        
+        let wiring = AuthenticationWiring(authenticationViewController)
+        wiring.configure()
+    }
+}
