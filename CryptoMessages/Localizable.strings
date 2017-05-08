@@ -6,6 +6,7 @@
   Copyright © 2017 Giorgio Natili. All rights reserved.
 */
 
+"WELCOME"                       = "Crypto Messages";
 "USERNAME"                      = "Username";
 "MISSING_USERNAME"              = "Username is required";
 "PASSWORD"                      = "Password";
