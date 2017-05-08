@@ -9,6 +9,7 @@
 "WELCOME"                       = "Crypto Messages";
 "USERNAME"                      = "Username";
 "MISSING_USERNAME"              = "Username is required";
+"USERNAME_IS_VALID_EMAIL"       = "Username should be a valid email";
 "PASSWORD"                      = "Password";
 "MISSING_PASSWORD"              = "Password is required";
 "LOGIN"                         = "Login";
