@@ -9,8 +9,24 @@
 /* Begin PBXBuildFile section */
 		2B205489B17544662CDA2558 /* Pods_CryptoMessagesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B016467411AAF207FDFF7B2 /* Pods_CryptoMessagesUITests.framework */; };
 		6D64167C7A4D0DDF9FF25D18 /* Pods_CryptoMessagesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79AD0DB1F5B1662FEFF5FEC5 /* Pods_CryptoMessagesTests.framework */; };
+		BA4117151EBF99C00027D82B /* AuhtenticationScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4117141EBF99C00027D82B /* AuhtenticationScenario.swift */; };
+		BA4117191EBF9AD00027D82B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4117181EBF9AD00027D82B /* User.swift */; };
+		BA41171B1EBF9BF20027D82B /* AuthenticationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41171A1EBF9BF20027D82B /* AuthenticationServices.swift */; };
+		BA41171D1EBF9D660027D82B /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41171C1EBF9D660027D82B /* UserStatus.swift */; };
+		BA41171F1EBFA1130027D82B /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41171E1EBFA1130027D82B /* AuthenticationViewController.swift */; };
+		BA4117261EBFA6140027D82B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA4117251EBFA6140027D82B /* Localizable.strings */; };
+		BA41172A1EBFAB300027D82B /* Strings+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4117291EBFAB300027D82B /* Strings+Extension.swift */; };
+		BA41172C1EBFAD9F0027D82B /* FirebaseAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41172B1EBFAD9F0027D82B /* FirebaseAuthentication.swift */; };
+		BA41172E1EBFAE260027D82B /* AuthenticationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41172D1EBFAE260027D82B /* AuthenticationInteractor.swift */; };
+		BA4117301EBFB00B0027D82B /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41172F1EBFB00B0027D82B /* Authentication.swift */; };
+		BA4117321EBFB4F90027D82B /* AuthenticationViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4117311EBFB4F90027D82B /* AuthenticationViewControllerTest.swift */; };
+		BA4117341EBFF5380027D82B /* AuthenticationWiring.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4117331EBFF5380027D82B /* AuthenticationWiring.swift */; };
+		BA4117361EBFF60F0027D82B /* AuthenticationInitizalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4117351EBFF60F0027D82B /* AuthenticationInitizalization.swift */; };
+		BA4117381EC00DF90027D82B /* AuthenticationRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4117371EC00DF90027D82B /* AuthenticationRouting.swift */; };
+		BA41173A1EC086830027D82B /* InputValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4117391EC086830027D82B /* InputValidation.swift */; };
+		BA41173C1EC089060027D82B /* ValidateInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41173B1EC089060027D82B /* ValidateInput.swift */; };
+		BA41173E1EC0C5DF0027D82B /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41173D1EC0C5DF0027D82B /* MessagesViewController.swift */; };
 		BA6BD0231EBF5CB600B8AAC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6BD0221EBF5CB600B8AAC5 /* AppDelegate.swift */; };
-		BA6BD0251EBF5CB600B8AAC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6BD0241EBF5CB600B8AAC5 /* ViewController.swift */; };
 		BA6BD0281EBF5CB600B8AAC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6BD0261EBF5CB600B8AAC5 /* Main.storyboard */; };
 		BA6BD02B1EBF5CB600B8AAC5 /* CryptoMessages.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA6BD0291EBF5CB600B8AAC5 /* CryptoMessages.xcdatamodeld */; };
 		BA6BD02D1EBF5CB600B8AAC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA6BD02C1EBF5CB600B8AAC5 /* Assets.xcassets */; };
@@ -46,9 +62,25 @@
 		708174F43CEE07978306F576 /* Pods-CryptoMessagesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMessagesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoMessagesTests/Pods-CryptoMessagesTests.release.xcconfig"; sourceTree = "<group>"; };
 		79AD0DB1F5B1662FEFF5FEC5 /* Pods_CryptoMessagesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoMessagesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5048D4BC8FB052AE2D4685D /* Pods_CryptoMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA4117141EBF99C00027D82B /* AuhtenticationScenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuhtenticationScenario.swift; sourceTree = "<group>"; };
+		BA4117181EBF9AD00027D82B /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BA41171A1EBF9BF20027D82B /* AuthenticationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationServices.swift; sourceTree = "<group>"; };
+		BA41171C1EBF9D660027D82B /* UserStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStatus.swift; sourceTree = "<group>"; };
+		BA41171E1EBFA1130027D82B /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		BA4117251EBFA6140027D82B /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ../Localizable.strings; sourceTree = "<group>"; };
+		BA4117291EBFAB300027D82B /* Strings+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Extension.swift"; sourceTree = "<group>"; };
+		BA41172B1EBFAD9F0027D82B /* FirebaseAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuthentication.swift; sourceTree = "<group>"; };
+		BA41172D1EBFAE260027D82B /* AuthenticationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationInteractor.swift; sourceTree = "<group>"; };
+		BA41172F1EBFB00B0027D82B /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		BA4117311EBFB4F90027D82B /* AuthenticationViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewControllerTest.swift; sourceTree = "<group>"; };
+		BA4117331EBFF5380027D82B /* AuthenticationWiring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationWiring.swift; sourceTree = "<group>"; };
+		BA4117351EBFF60F0027D82B /* AuthenticationInitizalization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationInitizalization.swift; sourceTree = "<group>"; };
+		BA4117371EC00DF90027D82B /* AuthenticationRouting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationRouting.swift; sourceTree = "<group>"; };
+		BA4117391EC086830027D82B /* InputValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputValidation.swift; sourceTree = "<group>"; };
+		BA41173B1EC089060027D82B /* ValidateInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateInput.swift; sourceTree = "<group>"; };
+		BA41173D1EC0C5DF0027D82B /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		BA6BD01F1EBF5CB600B8AAC5 /* CryptoMessages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoMessages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6BD0221EBF5CB600B8AAC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BA6BD0241EBF5CB600B8AAC5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BA6BD0271EBF5CB600B8AAC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA6BD02A1EBF5CB600B8AAC5 /* CryptoMessages.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CryptoMessages.xcdatamodel; sourceTree = "<group>"; };
 		BA6BD02C1EBF5CB600B8AAC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,6 +136,226 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BA4116FC1EBF99750027D82B /* messages */ = {
+			isa = PBXGroup;
+			children = (
+				BA4116FD1EBF99750027D82B /* config */,
+				BA4116FE1EBF99750027D82B /* interactor */,
+				BA4116FF1EBF99750027D82B /* model */,
+				BA4117031EBF99750027D82B /* presenter */,
+				BA4117041EBF99750027D82B /* protocols */,
+				BA4117051EBF99750027D82B /* routing */,
+				BA4117061EBF99750027D82B /* services */,
+				BA4117071EBF99750027D82B /* view */,
+			);
+			path = messages;
+			sourceTree = "<group>";
+		};
+		BA4116FD1EBF99750027D82B /* config */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		BA4116FE1EBF99750027D82B /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		BA4116FF1EBF99750027D82B /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BA4117171EBF9AC10027D82B /* entities */,
+				BA4117001EBF99750027D82B /* aggregates */,
+				BA4117011EBF99750027D82B /* repositories */,
+				BA4117021EBF99750027D82B /* values */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		BA4117001EBF99750027D82B /* aggregates */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = aggregates;
+			sourceTree = "<group>";
+		};
+		BA4117011EBF99750027D82B /* repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = repositories;
+			sourceTree = "<group>";
+		};
+		BA4117021EBF99750027D82B /* values */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = values;
+			sourceTree = "<group>";
+		};
+		BA4117031EBF99750027D82B /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		BA4117041EBF99750027D82B /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		BA4117051EBF99750027D82B /* routing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = routing;
+			sourceTree = "<group>";
+		};
+		BA4117061EBF99750027D82B /* services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		BA4117071EBF99750027D82B /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BA41173D1EC0C5DF0027D82B /* MessagesViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BA4117081EBF99830027D82B /* authentication */ = {
+			isa = PBXGroup;
+			children = (
+				BA4117091EBF99830027D82B /* config */,
+				BA41170A1EBF99830027D82B /* interactor */,
+				BA41170B1EBF99830027D82B /* model */,
+				BA41170F1EBF99830027D82B /* presenter */,
+				BA4117101EBF99830027D82B /* protocols */,
+				BA4117111EBF99830027D82B /* routing */,
+				BA4117121EBF99830027D82B /* services */,
+				BA4117131EBF99830027D82B /* view */,
+			);
+			path = authentication;
+			sourceTree = "<group>";
+		};
+		BA4117091EBF99830027D82B /* config */ = {
+			isa = PBXGroup;
+			children = (
+				BA4117331EBFF5380027D82B /* AuthenticationWiring.swift */,
+				BA4117351EBFF60F0027D82B /* AuthenticationInitizalization.swift */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+		BA41170A1EBF99830027D82B /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				BA41172D1EBFAE260027D82B /* AuthenticationInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		BA41170B1EBF99830027D82B /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BA4117161EBF9AA90027D82B /* entities */,
+				BA41170E1EBF99830027D82B /* values */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		BA41170E1EBF99830027D82B /* values */ = {
+			isa = PBXGroup;
+			children = (
+				BA41171C1EBF9D660027D82B /* UserStatus.swift */,
+			);
+			path = values;
+			sourceTree = "<group>";
+		};
+		BA41170F1EBF99830027D82B /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BA41172F1EBFB00B0027D82B /* Authentication.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		BA4117101EBF99830027D82B /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BA4117141EBF99C00027D82B /* AuhtenticationScenario.swift */,
+				BA41171A1EBF9BF20027D82B /* AuthenticationServices.swift */,
+				BA41173B1EC089060027D82B /* ValidateInput.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		BA4117111EBF99830027D82B /* routing */ = {
+			isa = PBXGroup;
+			children = (
+				BA4117371EC00DF90027D82B /* AuthenticationRouting.swift */,
+			);
+			path = routing;
+			sourceTree = "<group>";
+		};
+		BA4117121EBF99830027D82B /* services */ = {
+			isa = PBXGroup;
+			children = (
+				BA41172B1EBFAD9F0027D82B /* FirebaseAuthentication.swift */,
+				BA4117391EC086830027D82B /* InputValidation.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		BA4117131EBF99830027D82B /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BA41171E1EBFA1130027D82B /* AuthenticationViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BA4117161EBF9AA90027D82B /* entities */ = {
+			isa = PBXGroup;
+			children = (
+				BA4117181EBF9AD00027D82B /* User.swift */,
+			);
+			path = entities;
+			sourceTree = "<group>";
+		};
+		BA4117171EBF9AC10027D82B /* entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = entities;
+			sourceTree = "<group>";
+		};
+		BA4117221EBFA2020027D82B /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				BA4117251EBFA6140027D82B /* Localizable.strings */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		BA4117281EBFAB1A0027D82B /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BA4117291EBFAB300027D82B /* Strings+Extension.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		BA6BD0161EBF5CB600B8AAC5 = {
 			isa = PBXGroup;
 			children = (
@@ -130,12 +382,15 @@
 			isa = PBXGroup;
 			children = (
 				BA6BD0221EBF5CB600B8AAC5 /* AppDelegate.swift */,
-				BA6BD0241EBF5CB600B8AAC5 /* ViewController.swift */,
-				BA6BD0261EBF5CB600B8AAC5 /* Main.storyboard */,
+				BA4117221EBFA2020027D82B /* assets */,
 				BA6BD02C1EBF5CB600B8AAC5 /* Assets.xcassets */,
-				BA6BD02E1EBF5CB600B8AAC5 /* LaunchScreen.storyboard */,
-				BA6BD0311EBF5CB600B8AAC5 /* Info.plist */,
+				BA4117081EBF99830027D82B /* authentication */,
 				BA6BD0291EBF5CB600B8AAC5 /* CryptoMessages.xcdatamodeld */,
+				BA4117281EBFAB1A0027D82B /* extensions */,
+				BA6BD0311EBF5CB600B8AAC5 /* Info.plist */,
+				BA6BD02E1EBF5CB600B8AAC5 /* LaunchScreen.storyboard */,
+				BA6BD0261EBF5CB600B8AAC5 /* Main.storyboard */,
+				BA4116FC1EBF99750027D82B /* messages */,
 			);
 			path = CryptoMessages;
 			sourceTree = "<group>";
@@ -145,6 +400,7 @@
 			children = (
 				BA6BD03A1EBF5CB600B8AAC5 /* CryptoMessagesTests.swift */,
 				BA6BD03C1EBF5CB600B8AAC5 /* Info.plist */,
+				BA4117311EBFB4F90027D82B /* AuthenticationViewControllerTest.swift */,
 			);
 			path = CryptoMessagesTests;
 			sourceTree = "<group>";
@@ -288,6 +544,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA6BD0301EBF5CB600B8AAC5 /* LaunchScreen.storyboard in Resources */,
+				BA4117261EBFA6140027D82B /* Localizable.strings in Resources */,
 				BA6BD02D1EBF5CB600B8AAC5 /* Assets.xcassets in Resources */,
 				BA6BD0281EBF5CB600B8AAC5 /* Main.storyboard in Resources */,
 			);
@@ -452,9 +709,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA41171D1EBF9D660027D82B /* UserStatus.swift in Sources */,
+				BA4117341EBFF5380027D82B /* AuthenticationWiring.swift in Sources */,
 				BA6BD02B1EBF5CB600B8AAC5 /* CryptoMessages.xcdatamodeld in Sources */,
-				BA6BD0251EBF5CB600B8AAC5 /* ViewController.swift in Sources */,
+				BA41173E1EC0C5DF0027D82B /* MessagesViewController.swift in Sources */,
+				BA4117361EBFF60F0027D82B /* AuthenticationInitizalization.swift in Sources */,
+				BA41171B1EBF9BF20027D82B /* AuthenticationServices.swift in Sources */,
+				BA41172C1EBFAD9F0027D82B /* FirebaseAuthentication.swift in Sources */,
+				BA41171F1EBFA1130027D82B /* AuthenticationViewController.swift in Sources */,
+				BA41172A1EBFAB300027D82B /* Strings+Extension.swift in Sources */,
+				BA41173C1EC089060027D82B /* ValidateInput.swift in Sources */,
+				BA41172E1EBFAE260027D82B /* AuthenticationInteractor.swift in Sources */,
 				BA6BD0231EBF5CB600B8AAC5 /* AppDelegate.swift in Sources */,
+				BA4117191EBF9AD00027D82B /* User.swift in Sources */,
+				BA4117151EBF99C00027D82B /* AuhtenticationScenario.swift in Sources */,
+				BA4117381EC00DF90027D82B /* AuthenticationRouting.swift in Sources */,
+				BA41173A1EC086830027D82B /* InputValidation.swift in Sources */,
+				BA4117301EBFB00B0027D82B /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +733,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4117321EBFB4F90027D82B /* AuthenticationViewControllerTest.swift in Sources */,
 				BA6BD03B1EBF5CB600B8AAC5 /* CryptoMessagesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

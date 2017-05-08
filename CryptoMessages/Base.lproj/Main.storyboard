@@ -13,7 +13,7 @@
         <!--Authentication-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Authentication" customClass="ViewController" customModule="CryptoMessages" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Authentication" customClass="AuthenticationViewController" customModule="CryptoMessages" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -34,17 +34,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FE6-1N-vpi">
                                 <rect key="frame" x="16" y="63" width="343" height="153"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P5b-Bw-4Kr">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12345" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="P5b-Bw-4Kr">
                                         <rect key="frame" x="114" y="73" width="221" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kw0-Kh-oej">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="p@pepe.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Kw0-Kh-oej">
                                         <rect key="frame" x="114" y="26" width="221" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgZ-ir-YYd">
                                         <rect key="frame" x="8" y="31" width="85" height="21"/>
@@ -61,6 +61,9 @@
                                             <constraint firstAttribute="width" constant="78" id="ZK5-ot-b5T"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="doLoginWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fj9-5F-wq2"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rq8-ob-5eC">
                                         <rect key="frame" x="8" y="76" width="85" height="21"/>
@@ -71,6 +74,16 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDh-Vc-WCu">
+                                        <rect key="frame" x="114" y="128" width="148" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="e3V-tY-gJa"/>
+                                            <constraint firstAttribute="width" constant="148" id="qiO-E4-tcc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.37778347124037304" blue="0.23517169358391543" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -79,12 +92,14 @@
                                     <constraint firstAttribute="trailing" secondItem="P5b-Bw-4Kr" secondAttribute="trailing" constant="8" id="5vp-to-kdC"/>
                                     <constraint firstAttribute="height" constant="153" id="9cH-zS-2A6"/>
                                     <constraint firstItem="P5b-Bw-4Kr" firstAttribute="leading" secondItem="rq8-ob-5eC" secondAttribute="trailing" constant="21" id="I6t-UD-XaR"/>
+                                    <constraint firstItem="RDh-Vc-WCu" firstAttribute="top" secondItem="P5b-Bw-4Kr" secondAttribute="bottom" constant="25" id="NP6-yf-Jb8"/>
                                     <constraint firstItem="rq8-ob-5eC" firstAttribute="top" secondItem="TgZ-ir-YYd" secondAttribute="bottom" constant="24" id="PfJ-x1-yJK"/>
                                     <constraint firstItem="Kw0-Kh-oej" firstAttribute="centerY" secondItem="TgZ-ir-YYd" secondAttribute="centerY" id="Qtl-yj-Sp3"/>
                                     <constraint firstItem="Kw0-Kh-oej" firstAttribute="leading" secondItem="TgZ-ir-YYd" secondAttribute="trailing" constant="21" id="fDK-4s-QQU"/>
                                     <constraint firstItem="P5b-Bw-4Kr" firstAttribute="centerY" secondItem="rq8-ob-5eC" secondAttribute="centerY" constant="1.5" id="gha-aG-cm5"/>
                                     <constraint firstItem="TgZ-ir-YYd" firstAttribute="top" secondItem="FE6-1N-vpi" secondAttribute="top" constant="31" id="qAB-hE-upt"/>
                                     <constraint firstAttribute="trailing" secondItem="Kw0-Kh-oej" secondAttribute="trailing" constant="8" id="wiX-aq-aiR"/>
+                                    <constraint firstItem="OdU-C3-QZK" firstAttribute="leading" secondItem="RDh-Vc-WCu" secondAttribute="trailing" constant="-5" id="xbt-Od-YNe"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -100,6 +115,15 @@
                             <constraint firstAttribute="trailingMargin" secondItem="P5b-Bw-4Kr" secondAttribute="trailing" constant="8" id="mst-Ko-pIW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="errorMessage" destination="RDh-Vc-WCu" id="g4j-do-D4S"/>
+                        <outlet property="login" destination="OdU-C3-QZK" id="gij-1a-Wqq"/>
+                        <outlet property="password" destination="P5b-Bw-4Kr" id="xMh-C6-KRw"/>
+                        <outlet property="passwordLabel" destination="rq8-ob-5eC" id="OY9-rb-04R"/>
+                        <outlet property="username" destination="Kw0-Kh-oej" id="Q9B-58-69E"/>
+                        <outlet property="usernameLabel" destination="TgZ-ir-YYd" id="jrl-yS-dee"/>
+                        <outlet property="welcomeLabel" destination="8lH-ss-UiR" id="dr6-Xo-hbc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,7 +132,7 @@
         <!--Messages-->
         <scene sceneID="l3c-W1-s6l">
             <objects>
-                <viewController id="DvK-WK-pgL" userLabel="Messages" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MesseagesList" id="DvK-WK-pgL" userLabel="Messages" customClass="MessagesViewController" customModule="CryptoMessages" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CDF-dj-sDY"/>
                         <viewControllerLayoutGuide type="bottom" id="spb-gv-f9o"/>
@@ -125,7 +149,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iwd-Hz-Br3" id="REp-YZ-IAS">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
