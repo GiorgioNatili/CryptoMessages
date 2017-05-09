@@ -19,5 +19,4 @@ extension EncryptedMessage {
     @NSManaged public var id: Int32
     @NSManaged public var content: String?
     @NSManaged public var password: String?
-
 }

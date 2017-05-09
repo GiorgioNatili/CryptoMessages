@@ -13,17 +13,15 @@ class MessagesInteractor: MessagesInteractorInput {
     var presenter: MessagesInteractorOutput?
     var services: MessagesService
     
-    init(){
+    init(services: MessagesService){
         
-        services = LocalMessageService()
+        self.services = services
     }
     
     // MARK: - MessageInteractorInput implementation
     func saveMessage(message: EncryptedMessage) {
         
         services.allMessages()
-            
-        
     }
     
     func decrypMessage(password: String) {
