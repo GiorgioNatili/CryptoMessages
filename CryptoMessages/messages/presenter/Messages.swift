@@ -21,11 +21,7 @@ class Messages : MessagesPresenter, MessagesInteractorOutput {
     // MARK: - MessagesPresenter implementation
     func decryptMessage(message: EncryptedMessage, password: String) {
         
-        // TODO implement encrypting
-        if message.password == password {
-            
-            view?.showMessageContent(message: message.content!)
-        }
+        interactor?.decryptMessage(message: message, password: password)
     }
     
     func saveMessage(message: EncryptedMessage, password: String) {
@@ -44,8 +40,12 @@ class Messages : MessagesPresenter, MessagesInteractorOutput {
         //
     }
     
-    func decryptDidSucceeded() {
-        
+    func saveDidSucceeded(message: EncryptedMessage) {
         //
+    }
+    
+    func decryptDidSucceeded(content: String) {
+        
+         view?.showMessageContent(message: content)
     }
 }

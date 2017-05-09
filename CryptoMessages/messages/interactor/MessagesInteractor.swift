@@ -21,11 +21,22 @@ class MessagesInteractor: MessagesInteractorInput {
     // MARK: - MessageInteractorInput implementation
     func saveMessage(message: EncryptedMessage) {
         
-        services.allMessages()
+        services.saveMessage(message: message)
+            .subscribe {
+                
+                self.presenter?.saveDidSucceeded(message: message)
+        }
     }
     
-    func decrypMessage(password: String) {
-        
-        
+    func decryptMessage(message:EncryptedMessage, password: String) {
+     
+        // TODO Decrypt services to be implemented, with CryptoSwift
+        if message.password == password {
+            
+            presenter?.decryptDidSucceeded(content: message.content!)
+        } else {
+            
+            presenter?.decryptDidFailed(error: "PASSWORD_DONT_MATCH".localized)
+        }
     }
 }
