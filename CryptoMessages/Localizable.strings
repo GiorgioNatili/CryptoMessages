@@ -16,3 +16,4 @@
 "ENCRYPT"                       = "Password";
 "SAVE_MESSAGE"                  = "Save";
 "ENCRYPT_MESSAGE"               = "Encrypt";
+"PASSWORD_DONT_MATCH"           = "Passwords doesn't match";
