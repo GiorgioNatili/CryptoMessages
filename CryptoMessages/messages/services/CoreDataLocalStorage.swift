@@ -7,9 +7,25 @@
 //
 
 import Foundation
+import UIKit
 import CoreData
 
 class CoreDataLocalStorage : LocalStorageGateway {
+    
+    func manageAccessToContext<T>(handler: (_ : NSManagedObjectContext) throws -> T) throws -> T {
+        
+        // REFACTOR Move this AppDelegate up the call stack, which would eliminate dependency on UIKit
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            
+            let managedContext = appDelegate.persistentContainer.viewContext
+            
+            return try handler(managedContext)
+            
+        } else {
+            
+            throw FetchError(details: "Something went wrong accessing the app shared", errorCode: 101)
+        }
+    }
     
     func fetchMessagesOnLocalStorage() throws -> ((_ : NSManagedObjectContext ) throws -> [EncryptedMessage]) {
         

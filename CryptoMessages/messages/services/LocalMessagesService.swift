@@ -8,29 +8,14 @@
 
 import Foundation
 import RxSwift
-import CoreData
 
 class LocalMessageService: MessagesService {
     
-    let localStorageGateway: LocalStorageGateway
+    let gateway: LocalStorageGateway
     
     init(localStorageGateway: LocalStorageGateway) {
     
-        self.localStorageGateway = localStorageGateway
-    }
-    
-    func manageAccessToContext<T>(handler: (_ : NSManagedObjectContext) throws -> T) throws -> T {
-        
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            
-            let managedContext = appDelegate.persistentContainer.viewContext
-
-            return try handler(managedContext)
-            
-        } else {
-            
-            throw FetchError(details: "Something went wrong accessing the app shared", errorCode: 101)
-        }
+        self.gateway = localStorageGateway
     }
     
     // MARK: - MessagesService implementation
@@ -40,7 +25,7 @@ class LocalMessageService: MessagesService {
           
             do {
                 
-                let messages = try self.manageAccessToContext(handler: self.localStorageGateway.fetchMessagesOnLocalStorage())
+                let messages = try self.gateway.manageAccessToContext(handler: self.gateway.fetchMessagesOnLocalStorage())
                 
                 observer.onNext(messages)
                 observer.onCompleted()
@@ -64,10 +49,10 @@ class LocalMessageService: MessagesService {
             
             do {
                 
-                let newMessage = try self.manageAccessToContext(handler: self.localStorageGateway.saveMessageOnLocalStorage(message: message))
+                let newMessage = try self.gateway.manageAccessToContext(handler: self.gateway.saveMessageOnLocalStorage(message: message))
+                
                 observer.onNext(newMessage)
                 observer.onCompleted()
-                
                 
             } catch let fetchError as FetchError {
                 
@@ -88,7 +73,7 @@ class LocalMessageService: MessagesService {
             
             do {
                 
-                let newMessage = try self.manageAccessToContext(handler: self.localStorageGateway.updateMessageOnLocalStorage(message: message))
+                let newMessage = try self.gateway.manageAccessToContext(handler: self.gateway.updateMessageOnLocalStorage(message: message))
                 observer.onNext(newMessage)
                 observer.onCompleted()
                 
