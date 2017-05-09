@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:CryptoMessages/messages/model/entities/Message+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:CryptoMessages/messages/model/entities/Message+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:CryptoMessages.xcodeproj">
    </FileRef>
    <FileRef

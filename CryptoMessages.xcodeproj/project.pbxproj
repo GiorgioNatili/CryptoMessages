@@ -26,6 +26,9 @@
 		BA41173A1EC086830027D82B /* InputValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4117391EC086830027D82B /* InputValidation.swift */; };
 		BA41173C1EC089060027D82B /* ValidateInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41173B1EC089060027D82B /* ValidateInput.swift */; };
 		BA41173E1EC0C5DF0027D82B /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41173D1EC0C5DF0027D82B /* MessagesViewController.swift */; };
+		BA4117441EC0CEF50027D82B /* MessagesScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4117431EC0CEF50027D82B /* MessagesScenario.swift */; };
+		BA4117461EC0D5780027D82B /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4117451EC0D5780027D82B /* Messages.swift */; };
+		BA4117481EC0D6A50027D82B /* MessagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4117471EC0D6A50027D82B /* MessagesService.swift */; };
 		BA6BD0231EBF5CB600B8AAC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6BD0221EBF5CB600B8AAC5 /* AppDelegate.swift */; };
 		BA6BD0281EBF5CB600B8AAC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6BD0261EBF5CB600B8AAC5 /* Main.storyboard */; };
 		BA6BD02B1EBF5CB600B8AAC5 /* CryptoMessages.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA6BD0291EBF5CB600B8AAC5 /* CryptoMessages.xcdatamodeld */; };
@@ -33,6 +36,9 @@
 		BA6BD0301EBF5CB600B8AAC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6BD02E1EBF5CB600B8AAC5 /* LaunchScreen.storyboard */; };
 		BA6BD03B1EBF5CB600B8AAC5 /* CryptoMessagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6BD03A1EBF5CB600B8AAC5 /* CryptoMessagesTests.swift */; };
 		BA6BD0461EBF5CB600B8AAC5 /* CryptoMessagesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6BD0451EBF5CB600B8AAC5 /* CryptoMessagesUITests.swift */; };
+		BA97AC661EC1520D009631D3 /* MessagesWiring.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA97AC651EC1520D009631D3 /* MessagesWiring.swift */; };
+		BA97AC681EC1528A009631D3 /* MessagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA97AC671EC1528A009631D3 /* MessagesInteractor.swift */; };
+		BA97AC6A1EC15403009631D3 /* LocalMessagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA97AC691EC15403009631D3 /* LocalMessagesService.swift */; };
 		D148C5C5C752F67D498D7A9F /* Pods_CryptoMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5048D4BC8FB052AE2D4685D /* Pods_CryptoMessages.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +85,9 @@
 		BA4117391EC086830027D82B /* InputValidation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputValidation.swift; sourceTree = "<group>"; };
 		BA41173B1EC089060027D82B /* ValidateInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidateInput.swift; sourceTree = "<group>"; };
 		BA41173D1EC0C5DF0027D82B /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		BA4117431EC0CEF50027D82B /* MessagesScenario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesScenario.swift; sourceTree = "<group>"; };
+		BA4117451EC0D5780027D82B /* Messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		BA4117471EC0D6A50027D82B /* MessagesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesService.swift; sourceTree = "<group>"; };
 		BA6BD01F1EBF5CB600B8AAC5 /* CryptoMessages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoMessages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6BD0221EBF5CB600B8AAC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA6BD0271EBF5CB600B8AAC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,6 +101,9 @@
 		BA6BD0411EBF5CB600B8AAC5 /* CryptoMessagesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoMessagesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6BD0451EBF5CB600B8AAC5 /* CryptoMessagesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMessagesUITests.swift; sourceTree = "<group>"; };
 		BA6BD0471EBF5CB600B8AAC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA97AC651EC1520D009631D3 /* MessagesWiring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesWiring.swift; sourceTree = "<group>"; };
+		BA97AC671EC1528A009631D3 /* MessagesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesInteractor.swift; sourceTree = "<group>"; };
+		BA97AC691EC15403009631D3 /* LocalMessagesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalMessagesService.swift; sourceTree = "<group>"; };
 		C3755EAEBAEBC9720CF188B9 /* Pods-CryptoMessagesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMessagesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoMessagesUITests/Pods-CryptoMessagesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +166,7 @@
 		BA4116FD1EBF99750027D82B /* config */ = {
 			isa = PBXGroup;
 			children = (
+				BA97AC651EC1520D009631D3 /* MessagesWiring.swift */,
 			);
 			path = config;
 			sourceTree = "<group>";
@@ -161,6 +174,7 @@
 		BA4116FE1EBF99750027D82B /* interactor */ = {
 			isa = PBXGroup;
 			children = (
+				BA97AC671EC1528A009631D3 /* MessagesInteractor.swift */,
 			);
 			path = interactor;
 			sourceTree = "<group>";
@@ -200,6 +214,7 @@
 		BA4117031EBF99750027D82B /* presenter */ = {
 			isa = PBXGroup;
 			children = (
+				BA4117451EC0D5780027D82B /* Messages.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -207,6 +222,8 @@
 		BA4117041EBF99750027D82B /* protocols */ = {
 			isa = PBXGroup;
 			children = (
+				BA4117431EC0CEF50027D82B /* MessagesScenario.swift */,
+				BA4117471EC0D6A50027D82B /* MessagesService.swift */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -221,6 +238,7 @@
 		BA4117061EBF99750027D82B /* services */ = {
 			isa = PBXGroup;
 			children = (
+				BA97AC691EC15403009631D3 /* LocalMessagesService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -709,6 +727,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4117461EC0D5780027D82B /* Messages.swift in Sources */,
 				BA41171D1EBF9D660027D82B /* UserStatus.swift in Sources */,
 				BA4117341EBFF5380027D82B /* AuthenticationWiring.swift in Sources */,
 				BA6BD02B1EBF5CB600B8AAC5 /* CryptoMessages.xcdatamodeld in Sources */,
@@ -717,14 +736,19 @@
 				BA41171B1EBF9BF20027D82B /* AuthenticationServices.swift in Sources */,
 				BA41172C1EBFAD9F0027D82B /* FirebaseAuthentication.swift in Sources */,
 				BA41171F1EBFA1130027D82B /* AuthenticationViewController.swift in Sources */,
+				BA97AC6A1EC15403009631D3 /* LocalMessagesService.swift in Sources */,
 				BA41172A1EBFAB300027D82B /* Strings+Extension.swift in Sources */,
 				BA41173C1EC089060027D82B /* ValidateInput.swift in Sources */,
+				BA97AC661EC1520D009631D3 /* MessagesWiring.swift in Sources */,
 				BA41172E1EBFAE260027D82B /* AuthenticationInteractor.swift in Sources */,
 				BA6BD0231EBF5CB600B8AAC5 /* AppDelegate.swift in Sources */,
+				BA4117481EC0D6A50027D82B /* MessagesService.swift in Sources */,
 				BA4117191EBF9AD00027D82B /* User.swift in Sources */,
+				BA4117441EC0CEF50027D82B /* MessagesScenario.swift in Sources */,
 				BA4117151EBF99C00027D82B /* AuhtenticationScenario.swift in Sources */,
 				BA4117381EC00DF90027D82B /* AuthenticationRouting.swift in Sources */,
 				BA41173A1EC086830027D82B /* InputValidation.swift in Sources */,
+				BA97AC681EC1528A009631D3 /* MessagesInteractor.swift in Sources */,
 				BA4117301EBFB00B0027D82B /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -149,7 +149,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iwd-Hz-Br3" id="REp-YZ-IAS">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -158,10 +158,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ps-fU-JlR">
                                 <rect key="frame" x="313" y="617" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="doUpdatedMessage:" destination="DvK-WK-pgL" eventType="touchUpInside" id="c5q-Bw-RYe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrL-tI-gJ3">
                                 <rect key="frame" x="16" y="617" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="doHandleEncrypting:" destination="DvK-WK-pgL" eventType="touchUpInside" id="z7j-ea-18f"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttX-Yo-611">
                                 <rect key="frame" x="16" y="588" width="61" height="21"/>
@@ -208,6 +214,14 @@
                             <constraint firstItem="spb-gv-f9o" firstAttribute="top" secondItem="sP7-XG-dIx" secondAttribute="bottom" constant="217" id="zd8-wh-3Ym"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="encryptLabel" destination="ttX-Yo-611" id="QEg-Di-ype"/>
+                        <outlet property="encryptingPassword" destination="L9H-zx-9LS" id="Uh2-h2-x1A"/>
+                        <outlet property="handleEncrypt" destination="wrL-tI-gJ3" id="nxf-Aq-gaY"/>
+                        <outlet property="messageContent" destination="W1X-m1-bgY" id="2IJ-OM-9ji"/>
+                        <outlet property="messages" destination="sP7-XG-dIx" id="eS1-Ee-yTO"/>
+                        <outlet property="saveMessage" destination="9Ps-fU-JlR" id="bld-ra-0Xx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9sq-J8-pLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
