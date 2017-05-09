@@ -44,7 +44,8 @@ protocol MessagesInteractorOutput {
      * (completion handlers impelemented by the presenter,
      * this is how the presenter should be known from the interactor)
      */
-    func decryptDidSucceeded()
+    func saveDidSucceeded(message: EncryptedMessage)
+    func decryptDidSucceeded(content: String)
     func decryptDidFailed(error: String)
 }
 
@@ -57,6 +58,6 @@ protocol MessagesInteractorInput {
      * (how the interactor should be known from the presenter)
      */
     func saveMessage(message: EncryptedMessage)
-    func decrypMessage(password: String)
+    func decryptMessage(message: EncryptedMessage, password: String)
 }
 

@@ -14,4 +14,5 @@ protocol MessagesService {
     func allMessages() -> Observable<[EncryptedMessage]>
     func getMessage(id: Int) -> Observable<EncryptedMessage>
     func saveMessage(message: EncryptedMessage) -> Observable<EncryptedMessage>
+    func updateMessage(message: EncryptedMessage) -> Observable<EncryptedMessage>
 }
