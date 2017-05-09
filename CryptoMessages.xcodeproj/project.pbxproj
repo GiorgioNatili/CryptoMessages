@@ -42,6 +42,8 @@
 		BA97AC741EC1DDAC009631D3 /* FetchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA97AC731EC1DDAC009631D3 /* FetchError.swift */; };
 		BABF66861EC1E63C006A819B /* EncryptedMessage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF66841EC1E63C006A819B /* EncryptedMessage+CoreDataClass.swift */; };
 		BABF66871EC1E63C006A819B /* EncryptedMessage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF66851EC1E63C006A819B /* EncryptedMessage+CoreDataProperties.swift */; };
+		BABF66891EC26541006A819B /* CoreDataLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF66881EC26541006A819B /* CoreDataLocalStorage.swift */; };
+		BABF668B1EC265B2006A819B /* LocalStorageGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF668A1EC265B2006A819B /* LocalStorageGateway.swift */; };
 		D148C5C5C752F67D498D7A9F /* Pods_CryptoMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5048D4BC8FB052AE2D4685D /* Pods_CryptoMessages.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +112,8 @@
 		BA97AC731EC1DDAC009631D3 /* FetchError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchError.swift; sourceTree = "<group>"; };
 		BABF66841EC1E63C006A819B /* EncryptedMessage+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EncryptedMessage+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BABF66851EC1E63C006A819B /* EncryptedMessage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EncryptedMessage+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BABF66881EC26541006A819B /* CoreDataLocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataLocalStorage.swift; sourceTree = "<group>"; };
+		BABF668A1EC265B2006A819B /* LocalStorageGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageGateway.swift; sourceTree = "<group>"; };
 		C3755EAEBAEBC9720CF188B9 /* Pods-CryptoMessagesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMessagesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoMessagesUITests/Pods-CryptoMessagesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,6 +219,7 @@
 			children = (
 				BA4117431EC0CEF50027D82B /* MessagesScenario.swift */,
 				BA4117471EC0D6A50027D82B /* MessagesService.swift */,
+				BABF668A1EC265B2006A819B /* LocalStorageGateway.swift */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				BA97AC691EC15403009631D3 /* LocalMessagesService.swift */,
+				BABF66881EC26541006A819B /* CoreDataLocalStorage.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -726,10 +732,12 @@
 				BA6BD02B1EBF5CB600B8AAC5 /* CryptoMessages.xcdatamodeld in Sources */,
 				BA41173E1EC0C5DF0027D82B /* MessagesViewController.swift in Sources */,
 				BA4117361EBFF60F0027D82B /* AuthenticationInitizalization.swift in Sources */,
+				BABF668B1EC265B2006A819B /* LocalStorageGateway.swift in Sources */,
 				BA41171B1EBF9BF20027D82B /* AuthenticationServices.swift in Sources */,
 				BA41172C1EBFAD9F0027D82B /* FirebaseAuthentication.swift in Sources */,
 				BA41171F1EBFA1130027D82B /* AuthenticationViewController.swift in Sources */,
 				BA97AC6A1EC15403009631D3 /* LocalMessagesService.swift in Sources */,
+				BABF66891EC26541006A819B /* CoreDataLocalStorage.swift in Sources */,
 				BA41172A1EBFAB300027D82B /* Strings+Extension.swift in Sources */,
 				BA41173C1EC089060027D82B /* ValidateInput.swift in Sources */,
 				BABF66861EC1E63C006A819B /* EncryptedMessage+CoreDataClass.swift in Sources */,

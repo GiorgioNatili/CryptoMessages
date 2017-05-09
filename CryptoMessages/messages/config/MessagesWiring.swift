@@ -22,7 +22,8 @@ class MessagesWiring {
         
         let presenter = Messages()
         
-        let interactor = MessagesInteractor()
+        let localMessageService = LocalMessageService(localStorageGateway: CoreDataLocalStorage())
+        let interactor = MessagesInteractor(services: localMessageService)
         
         presenter.view = view
         presenter.interactor = interactor
