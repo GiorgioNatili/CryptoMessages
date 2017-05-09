@@ -16,9 +16,9 @@ class Authentication : AuthenticationPresenter, AuthenticationInteractorOutput {
     
     let validateInput: ValidateInput
       
-    init() {
+    init(validation: ValidateInput) {
         
-        self.validateInput = InputValidation()
+        self.validateInput = validation
     }
     
     // MARK: - AuthenticationInteractorOutput implementation

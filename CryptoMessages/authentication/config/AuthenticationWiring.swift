@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class AuthenticationWiring {
+class AuthenticationBehaviorWiring {
     
     var view: AuthenticationView
     
@@ -21,10 +21,10 @@ class AuthenticationWiring {
     
     func configure() {
         
-        let presenter = Authentication()
+        let presenter = Authentication(validation: InputValidation())
         
         let router = AuthenticationRouter()
-        let interactor = AuthenticationInteractor()
+        let interactor = AuthenticationInteractor(services: FirebaseAuthentication())
         
         presenter.view = view
         presenter.router = router

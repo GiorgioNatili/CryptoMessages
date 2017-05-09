@@ -15,7 +15,7 @@ class AuthenticationInitizalization: NSObject {
     
     override func awakeFromNib() {
         
-        let wiring = AuthenticationWiring(authenticationViewController)
+        let wiring = AuthenticationBehaviorWiring(authenticationViewController)
         wiring.configure()
     }
 }

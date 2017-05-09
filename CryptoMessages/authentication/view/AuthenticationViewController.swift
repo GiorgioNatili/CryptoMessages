@@ -27,7 +27,7 @@ class AuthenticationViewController: UIViewController, AuthenticationView {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let wiring = AuthenticationWiring(self)
+        let wiring = AuthenticationBehaviorWiring(self)
         wiring.configure()
         
         updateContent()
@@ -44,9 +44,10 @@ class AuthenticationViewController: UIViewController, AuthenticationView {
         welcomeLabel.text = "WELCOME".localized
         usernameLabel.text = "LOGIN".localized
         passwordLabel.text = "PASSWORD".localized
-        errorMessage.text = ""
         
         login.setTitle("LOGIN".localized, for: .normal)
+        
+        resetErrorMessage()
     }
     
     // MARK: - User interaction

@@ -13,9 +13,9 @@ class AuthenticationInteractor: AuthenticationInteractorInput {
     var presenter: AuthenticationInteractorOutput?
     var services: AuthenticagionServices
     
-    init(){
+    init(services: AuthenticagionServices){
         
-        services = FirebaseAuthentication()
+        self.services = services
     }
     
     // MARK: - AuthenticationInteractorInput implementation
@@ -23,6 +23,7 @@ class AuthenticationInteractor: AuthenticationInteractorInput {
         
         services.auhtenticate(user: user).subscribe {
             
+            // TODO handle the error case
             print($0)
             self.presenter?.loginDidSucceeded()
         }

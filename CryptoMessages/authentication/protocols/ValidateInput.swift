@@ -8,6 +8,7 @@
 
 import Foundation
 
+// TODO rename into ValidationRules
 protocol ValidateInput {
     
     func validEmail(email: String) -> Bool
