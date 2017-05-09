@@ -19,7 +19,7 @@ class MessagesInteractor: MessagesInteractorInput {
     }
     
     // MARK: - MessageInteractorInput implementation
-    func saveMessage(message: Message) {
+    func saveMessage(message: EncryptedMessage) {
         
         services.allMessages()
             

@@ -18,8 +18,8 @@ protocol MessagesPresenter {
      * Communication VIEW -> PRESENTER
      * (how the presenter should be known from the view)
      */
-    func decryptMessage(message: Message, password: String)
-    func saveMessage(message: Message, password: String)
+    func decryptMessage(message: EncryptedMessage, password: String)
+    func saveMessage(message: EncryptedMessage, password: String)
     func updateMessage(message: String)
 }
 
@@ -31,7 +31,7 @@ protocol MessagesView {
      * Communication PRESENTER -> VIEW
      * (how the view should be known from the presenter)
      */
-    func showMessages(data: [Message])
+    func showMessages(data: [EncryptedMessage])
     func showMessageContent(message: String)
     func allowSaveMessage(canSave: Bool)
     func allowDecryptMessage(status: Bool)
@@ -56,7 +56,7 @@ protocol MessagesInteractorInput {
      * Communication PRESENTER -> INTERACTOR
      * (how the interactor should be known from the presenter)
      */
-    func saveMessage(message: Message)
+    func saveMessage(message: EncryptedMessage)
     func decrypMessage(password: String)
 }
 

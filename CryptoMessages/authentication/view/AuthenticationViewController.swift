@@ -21,9 +21,7 @@ class AuthenticationViewController: UIViewController, AuthenticationView {
     
     // MARK: - Instance members
     var presenter: AuthenticationPresenter?
-    // var validator: Validator?
-  //  var validationDelegate: LoginInputValidation?
-    
+   
     // MARK: - Livecycle override
     override func viewDidLoad() {
         super.viewDidLoad()

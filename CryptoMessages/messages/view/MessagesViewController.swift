@@ -65,13 +65,13 @@ class MessagesViewController: UIViewController, MessagesView {
         if sender.tag == States.SAVE.rawValue {
             
             // TODO pass the current message
-            presenter?.saveMessage(message: Message(),
+            presenter?.saveMessage(message: EncryptedMessage(),
                                    password: encryptingPassword.text!)
         }
         
         if sender.tag == States.DECRYPT.rawValue {
             
-            presenter?.decryptMessage(message: Message(), password: encryptingPassword.text!)
+            presenter?.decryptMessage(message: EncryptedMessage(), password: encryptingPassword.text!)
         }
     }
     
@@ -86,7 +86,7 @@ class MessagesViewController: UIViewController, MessagesView {
     */
 
     // MARK: - MessagesView implementation
-    func showMessages(data: [Message]) {
+    func showMessages(data: [EncryptedMessage]) {
         
         // TODO UITableViewDataSource
         // messages.dataSource = data

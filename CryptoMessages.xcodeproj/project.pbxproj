@@ -39,6 +39,9 @@
 		BA97AC661EC1520D009631D3 /* MessagesWiring.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA97AC651EC1520D009631D3 /* MessagesWiring.swift */; };
 		BA97AC681EC1528A009631D3 /* MessagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA97AC671EC1528A009631D3 /* MessagesInteractor.swift */; };
 		BA97AC6A1EC15403009631D3 /* LocalMessagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA97AC691EC15403009631D3 /* LocalMessagesService.swift */; };
+		BA97AC741EC1DDAC009631D3 /* FetchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA97AC731EC1DDAC009631D3 /* FetchError.swift */; };
+		BABF66861EC1E63C006A819B /* EncryptedMessage+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF66841EC1E63C006A819B /* EncryptedMessage+CoreDataClass.swift */; };
+		BABF66871EC1E63C006A819B /* EncryptedMessage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF66851EC1E63C006A819B /* EncryptedMessage+CoreDataProperties.swift */; };
 		D148C5C5C752F67D498D7A9F /* Pods_CryptoMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5048D4BC8FB052AE2D4685D /* Pods_CryptoMessages.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +107,9 @@
 		BA97AC651EC1520D009631D3 /* MessagesWiring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesWiring.swift; sourceTree = "<group>"; };
 		BA97AC671EC1528A009631D3 /* MessagesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesInteractor.swift; sourceTree = "<group>"; };
 		BA97AC691EC15403009631D3 /* LocalMessagesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalMessagesService.swift; sourceTree = "<group>"; };
+		BA97AC731EC1DDAC009631D3 /* FetchError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchError.swift; sourceTree = "<group>"; };
+		BABF66841EC1E63C006A819B /* EncryptedMessage+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EncryptedMessage+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BABF66851EC1E63C006A819B /* EncryptedMessage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EncryptedMessage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C3755EAEBAEBC9720CF188B9 /* Pods-CryptoMessagesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMessagesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoMessagesUITests/Pods-CryptoMessagesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,30 +189,15 @@
 			isa = PBXGroup;
 			children = (
 				BA4117171EBF9AC10027D82B /* entities */,
-				BA4117001EBF99750027D82B /* aggregates */,
-				BA4117011EBF99750027D82B /* repositories */,
 				BA4117021EBF99750027D82B /* values */,
 			);
 			path = model;
 			sourceTree = "<group>";
 		};
-		BA4117001EBF99750027D82B /* aggregates */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = aggregates;
-			sourceTree = "<group>";
-		};
-		BA4117011EBF99750027D82B /* repositories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = repositories;
-			sourceTree = "<group>";
-		};
 		BA4117021EBF99750027D82B /* values */ = {
 			isa = PBXGroup;
 			children = (
+				BA97AC731EC1DDAC009631D3 /* FetchError.swift */,
 			);
 			path = values;
 			sourceTree = "<group>";
@@ -354,6 +345,8 @@
 		BA4117171EBF9AC10027D82B /* entities */ = {
 			isa = PBXGroup;
 			children = (
+				BABF66841EC1E63C006A819B /* EncryptedMessage+CoreDataClass.swift */,
+				BABF66851EC1E63C006A819B /* EncryptedMessage+CoreDataProperties.swift */,
 			);
 			path = entities;
 			sourceTree = "<group>";
@@ -739,10 +732,13 @@
 				BA97AC6A1EC15403009631D3 /* LocalMessagesService.swift in Sources */,
 				BA41172A1EBFAB300027D82B /* Strings+Extension.swift in Sources */,
 				BA41173C1EC089060027D82B /* ValidateInput.swift in Sources */,
+				BABF66861EC1E63C006A819B /* EncryptedMessage+CoreDataClass.swift in Sources */,
 				BA97AC661EC1520D009631D3 /* MessagesWiring.swift in Sources */,
 				BA41172E1EBFAE260027D82B /* AuthenticationInteractor.swift in Sources */,
 				BA6BD0231EBF5CB600B8AAC5 /* AppDelegate.swift in Sources */,
+				BA97AC741EC1DDAC009631D3 /* FetchError.swift in Sources */,
 				BA4117481EC0D6A50027D82B /* MessagesService.swift in Sources */,
+				BABF66871EC1E63C006A819B /* EncryptedMessage+CoreDataProperties.swift in Sources */,
 				BA4117191EBF9AD00027D82B /* User.swift in Sources */,
 				BA4117441EC0CEF50027D82B /* MessagesScenario.swift in Sources */,
 				BA4117151EBF99C00027D82B /* AuhtenticationScenario.swift in Sources */,

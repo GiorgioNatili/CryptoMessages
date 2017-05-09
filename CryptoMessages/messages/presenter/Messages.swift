@@ -19,7 +19,7 @@ class Messages : MessagesPresenter, MessagesInteractorOutput {
     }
     
     // MARK: - MessagesPresenter implementation
-    func decryptMessage(message: Message, password: String) {
+    func decryptMessage(message: EncryptedMessage, password: String) {
         
         // TODO implement encrypting
         if message.password == password {
@@ -28,7 +28,7 @@ class Messages : MessagesPresenter, MessagesInteractorOutput {
         }
     }
     
-    func saveMessage(message: Message, password: String) {
+    func saveMessage(message: EncryptedMessage, password: String) {
         
         // TODO use coredata to save the messages
     }

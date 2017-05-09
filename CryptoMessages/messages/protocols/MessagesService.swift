@@ -11,6 +11,6 @@ import RxSwift
 
 protocol MessagesService {
     
-    func allMessages() -> Observable<[Message]>
-    func getMessage(id: Int) -> Observable<Message>
+    func allMessages() -> Observable<[EncryptedMessage]>
+    func getMessage(id: Int) -> Observable<EncryptedMessage>
 }
