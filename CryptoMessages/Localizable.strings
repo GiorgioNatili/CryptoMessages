@@ -13,3 +13,6 @@
 "PASSWORD"                      = "Password";
 "MISSING_PASSWORD"              = "Password is required";
 "LOGIN"                         = "Login";
+"ENCRYPT"                       = "Password";
+"SAVE_MESSAGE"                  = "Save";
+"ENCRYPT_MESSAGE"               = "Encrypt";
