@@ -44,6 +44,10 @@
 		BABF66871EC1E63C006A819B /* EncryptedMessage+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF66851EC1E63C006A819B /* EncryptedMessage+CoreDataProperties.swift */; };
 		BABF66891EC26541006A819B /* CoreDataLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF66881EC26541006A819B /* CoreDataLocalStorage.swift */; };
 		BABF668B1EC265B2006A819B /* LocalStorageGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF668A1EC265B2006A819B /* LocalStorageGateway.swift */; };
+		BABF668D1EC26ACA006A819B /* DecryptMessageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABF668C1EC26ACA006A819B /* DecryptMessageTest.swift */; };
+		BACD7BB61EC29B3400D3E18A /* MockMessagesInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACD7BB51EC29B3300D3E18A /* MockMessagesInteractorOutput.swift */; };
+		BACD7BBA1EC2B3AE00D3E18A /* MessagesViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACD7BB91EC2B3AE00D3E18A /* MessagesViewController+Extension.swift */; };
+		BACD7BBC1EC2C4C500D3E18A /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACD7BBB1EC2C4C500D3E18A /* MessageTableViewCell.swift */; };
 		D148C5C5C752F67D498D7A9F /* Pods_CryptoMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5048D4BC8FB052AE2D4685D /* Pods_CryptoMessages.framework */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +118,10 @@
 		BABF66851EC1E63C006A819B /* EncryptedMessage+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EncryptedMessage+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BABF66881EC26541006A819B /* CoreDataLocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataLocalStorage.swift; sourceTree = "<group>"; };
 		BABF668A1EC265B2006A819B /* LocalStorageGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageGateway.swift; sourceTree = "<group>"; };
+		BABF668C1EC26ACA006A819B /* DecryptMessageTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecryptMessageTest.swift; sourceTree = "<group>"; };
+		BACD7BB51EC29B3300D3E18A /* MockMessagesInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMessagesInteractorOutput.swift; sourceTree = "<group>"; };
+		BACD7BB91EC2B3AE00D3E18A /* MessagesViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessagesViewController+Extension.swift"; sourceTree = "<group>"; };
+		BACD7BBB1EC2C4C500D3E18A /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		C3755EAEBAEBC9720CF188B9 /* Pods-CryptoMessagesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMessagesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoMessagesUITests/Pods-CryptoMessagesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -244,6 +252,8 @@
 			isa = PBXGroup;
 			children = (
 				BA41173D1EC0C5DF0027D82B /* MessagesViewController.swift */,
+				BACD7BB91EC2B3AE00D3E18A /* MessagesViewController+Extension.swift */,
+				BACD7BBB1EC2C4C500D3E18A /* MessageTableViewCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -415,9 +425,11 @@
 		BA6BD0391EBF5CB600B8AAC5 /* CryptoMessagesTests */ = {
 			isa = PBXGroup;
 			children = (
+				BACD7BB41EC29B3300D3E18A /* mocks */,
 				BA6BD03A1EBF5CB600B8AAC5 /* CryptoMessagesTests.swift */,
 				BA6BD03C1EBF5CB600B8AAC5 /* Info.plist */,
 				BA4117311EBFB4F90027D82B /* AuthenticationViewControllerTest.swift */,
+				BABF668C1EC26ACA006A819B /* DecryptMessageTest.swift */,
 			);
 			path = CryptoMessagesTests;
 			sourceTree = "<group>";
@@ -429,6 +441,14 @@
 				BA6BD0471EBF5CB600B8AAC5 /* Info.plist */,
 			);
 			path = CryptoMessagesUITests;
+			sourceTree = "<group>";
+		};
+		BACD7BB41EC29B3300D3E18A /* mocks */ = {
+			isa = PBXGroup;
+			children = (
+				BACD7BB51EC29B3300D3E18A /* MockMessagesInteractorOutput.swift */,
+			);
+			path = mocks;
 			sourceTree = "<group>";
 		};
 		F7C0E19F5E5921CE58CEC853 /* Frameworks */ = {
@@ -745,9 +765,11 @@
 				BA41172E1EBFAE260027D82B /* AuthenticationInteractor.swift in Sources */,
 				BA6BD0231EBF5CB600B8AAC5 /* AppDelegate.swift in Sources */,
 				BA97AC741EC1DDAC009631D3 /* FetchError.swift in Sources */,
+				BACD7BBA1EC2B3AE00D3E18A /* MessagesViewController+Extension.swift in Sources */,
 				BA4117481EC0D6A50027D82B /* MessagesService.swift in Sources */,
 				BABF66871EC1E63C006A819B /* EncryptedMessage+CoreDataProperties.swift in Sources */,
 				BA4117191EBF9AD00027D82B /* User.swift in Sources */,
+				BACD7BBC1EC2C4C500D3E18A /* MessageTableViewCell.swift in Sources */,
 				BA4117441EC0CEF50027D82B /* MessagesScenario.swift in Sources */,
 				BA4117151EBF99C00027D82B /* AuhtenticationScenario.swift in Sources */,
 				BA4117381EC00DF90027D82B /* AuthenticationRouting.swift in Sources */,
@@ -761,8 +783,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BABF668D1EC26ACA006A819B /* DecryptMessageTest.swift in Sources */,
 				BA4117321EBFB4F90027D82B /* AuthenticationViewControllerTest.swift in Sources */,
 				BA6BD03B1EBF5CB600B8AAC5 /* CryptoMessagesTests.swift in Sources */,
+				BACD7BB61EC29B3400D3E18A /* MockMessagesInteractorOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

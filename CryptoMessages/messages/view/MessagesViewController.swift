@@ -14,15 +14,16 @@ class MessagesViewController: UIViewController, MessagesView {
     // MARK: - UI Elements
     
     @IBOutlet weak var encryptLabel: UILabel!
-    @IBOutlet weak var handleEncrypt: UIButton!
-    @IBOutlet weak var saveMessage: UIButton!
-    @IBOutlet weak var messageContent: UITextView!
-    @IBOutlet weak var messages: UITableView!
-    @IBOutlet weak var encryptingPassword: UITextField!
+    @IBOutlet weak var handleEncryptButton: UIButton!
+    @IBOutlet weak var saveMessageButton: UIButton!
+    @IBOutlet weak var messageContentTextView: UITextView!
+    @IBOutlet weak var messagesTable: UITableView!
+    @IBOutlet weak var encryptingPasswordTextField: UITextField!
     
     // MARK: - Instance members
     var presenter: MessagesPresenter?
     var selectedMessage: EncryptedMessage?
+    var allMessages: [EncryptedMessage] = []
     
     // MARK: - Livecycle override
     override func viewDidLoad() {
@@ -32,7 +33,10 @@ class MessagesViewController: UIViewController, MessagesView {
         let messagesWiring = MessagesWiring(self)
         messagesWiring.configure()
         
+        messagesTable.register(UITableViewCell.self,  forCellReuseIdentifier: "Cell")
+        
         updateContent()
+        presenter?.getAllMessages()
     }
     
     // MARK: - Private methods
@@ -40,8 +44,8 @@ class MessagesViewController: UIViewController, MessagesView {
         
         encryptLabel.text = "ENCRYPT".localized
         
-        saveMessage.setTitle("SAVE_MESSAGE".localized, for: .normal)
-        handleEncrypt.setTitle("ENCRYPT_MESSAGE".localized, for: .normal)
+        saveMessageButton.setTitle("SAVE_MESSAGE".localized, for: .normal)
+        handleEncryptButton.setTitle("ENCRYPT_MESSAGE".localized, for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,8 +71,8 @@ class MessagesViewController: UIViewController, MessagesView {
                 let newMessage = EncryptedMessage(entity: entity!, insertInto: managedContext)
                 
                 newMessage.id = Int32(Int(arc4random_uniform(3)))
-                newMessage.content = messageContent.text
-                newMessage.password = encryptingPassword.text
+                newMessage.content = messageContentTextView.text
+                newMessage.password = encryptingPasswordTextField.text
                 
                 presenter?.saveMessage(message: newMessage)
             }
@@ -79,7 +83,7 @@ class MessagesViewController: UIViewController, MessagesView {
         
         if let message = selectedMessage {
         
-            presenter?.decryptMessage(message: message, password: encryptingPassword.text!)
+            presenter?.decryptMessage(message: message, password: encryptingPasswordTextField.text!)
         }
     }
     
@@ -97,22 +101,34 @@ class MessagesViewController: UIViewController, MessagesView {
     func showMessages(data: [EncryptedMessage]) {
         
         // TODO UITableViewDataSource
-        // messages.dataSource = data
+        allMessages = data
+        messagesTable.reloadData()
+    }
+    
+    func showErrorMessage(message: String) {
+        
+        // TODO implement error
+        print(message)
+    }
+    
+    func refreshMessages() {
+        
+        messagesTable.reloadData()
     }
     
     func showMessageContent(message: String) {
         
-        messageContent.text = message
+        messageContentTextView.text = message
     }
     
     func allowSaveMessage(canSave: Bool) {
         
-        saveMessage.isHidden = canSave
+        saveMessageButton.isHidden = canSave
     }
     
     func allowDecryptMessage(status: Bool) {
         
-        handleEncrypt.isHidden = status
+        handleEncryptButton.isHidden = status
     }
 }
 
