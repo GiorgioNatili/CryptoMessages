@@ -159,7 +159,7 @@
                                 <rect key="frame" x="313" y="617" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="doUpdatedMessage:" destination="DvK-WK-pgL" eventType="touchUpInside" id="c5q-Bw-RYe"/>
+                                    <action selector="doSaveMessage:" destination="DvK-WK-pgL" eventType="touchUpInside" id="EAb-6Z-Prv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrL-tI-gJ3">
@@ -170,24 +170,23 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ttX-Yo-611">
-                                <rect key="frame" x="16" y="588" width="61" height="21"/>
+                                <rect key="frame" x="16" y="588" width="103" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="61" id="LYe-am-JPg"/>
+                                    <constraint firstAttribute="width" constant="103" id="LYe-am-JPg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L9H-zx-9LS">
-                                <rect key="frame" x="90" y="584" width="269" height="30"/>
+                                <rect key="frame" x="127" y="584" width="232" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="W1X-m1-bgY">
                                 <rect key="frame" x="16" y="458" width="343" height="113"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -209,7 +208,7 @@
                             <constraint firstItem="L9H-zx-9LS" firstAttribute="centerY" secondItem="ttX-Yo-611" secondAttribute="centerY" id="j1I-An-AQw"/>
                             <constraint firstAttribute="leadingMargin" secondItem="sP7-XG-dIx" secondAttribute="leading" id="q8a-VM-LOK"/>
                             <constraint firstItem="spb-gv-f9o" firstAttribute="top" secondItem="9Ps-fU-JlR" secondAttribute="bottom" constant="20" id="tvI-tS-TWd"/>
-                            <constraint firstItem="L9H-zx-9LS" firstAttribute="leading" secondItem="ttX-Yo-611" secondAttribute="trailing" constant="13" id="xuT-r8-zAw"/>
+                            <constraint firstItem="L9H-zx-9LS" firstAttribute="leading" secondItem="ttX-Yo-611" secondAttribute="trailing" constant="8" id="xuT-r8-zAw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9Ps-fU-JlR" secondAttribute="trailing" id="ykc-qk-j9f"/>
                             <constraint firstItem="spb-gv-f9o" firstAttribute="top" secondItem="sP7-XG-dIx" secondAttribute="bottom" constant="217" id="zd8-wh-3Ym"/>
                         </constraints>

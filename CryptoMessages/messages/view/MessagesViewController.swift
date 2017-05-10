@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MessagesViewController: UIViewController, MessagesView {
 
@@ -50,23 +51,27 @@ class MessagesViewController: UIViewController, MessagesView {
     
     // MARK: - User interaction
     
-    @IBAction func doUpdatedMessage(_ sender: Any) {
-        
-        //presenter?.updateMessage(message: messageContent.text!)
-    }
-    
-    @IBAction func doSaveMessage(_ sended: Any) {
+    @IBAction func doSaveMessage(_ sender: Any) {
         
         if let message = selectedMessage {
             
             presenter?.updateMessage(message: message)
         } else {
             
-            let newMessage = EncryptedMessage()
-            newMessage.content = messageContent.text
-            newMessage.password = encryptingPassword.text
-            
-            presenter?.saveMessage(message: newMessage)
+            // TODO move the buidling in a factory
+            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                
+                let managedContext = appDelegate.persistentContainer.viewContext
+                
+                let entity = NSEntityDescription.entity(forEntityName: "EncryptedMessage", in: managedContext)
+                let newMessage = EncryptedMessage(entity: entity!, insertInto: managedContext)
+                
+                newMessage.id = Int32(Int(arc4random_uniform(3)))
+                newMessage.content = messageContent.text
+                newMessage.password = encryptingPassword.text
+                
+                presenter?.saveMessage(message: newMessage)
+            }
         }
     }
     
