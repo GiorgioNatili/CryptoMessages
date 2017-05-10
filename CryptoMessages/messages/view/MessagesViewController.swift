@@ -21,12 +21,7 @@ class MessagesViewController: UIViewController, MessagesView {
     
     // MARK: - Instance members
     var presenter: MessagesPresenter?
-    
-    enum States: Int {
-        
-        case DECRYPT = 10
-        case SAVE = 20
-    }
+    var selectedMessage: EncryptedMessage?
     
     // MARK: - Livecycle override
     override func viewDidLoad() {
@@ -57,21 +52,29 @@ class MessagesViewController: UIViewController, MessagesView {
     
     @IBAction func doUpdatedMessage(_ sender: Any) {
         
-        presenter?.updateMessage(message: messageContent.text!)
+        //presenter?.updateMessage(message: messageContent.text!)
+    }
+    
+    @IBAction func doSaveMessage(_ sended: Any) {
+        
+        if let message = selectedMessage {
+            
+            presenter?.updateMessage(message: message)
+        } else {
+            
+            let newMessage = EncryptedMessage()
+            newMessage.content = messageContent.text
+            newMessage.password = encryptingPassword.text
+            
+            presenter?.saveMessage(message: newMessage)
+        }
     }
     
     @IBAction func doHandleEncrypting(_ sender: UIButton) {
         
-        if sender.tag == States.SAVE.rawValue {
-            
-            // TODO pass the current message
-            presenter?.saveMessage(message: EncryptedMessage(),
-                                   password: encryptingPassword.text!)
-        }
+        if let message = selectedMessage {
         
-        if sender.tag == States.DECRYPT.rawValue {
-            
-            presenter?.decryptMessage(message: EncryptedMessage(), password: encryptingPassword.text!)
+            presenter?.decryptMessage(message: message, password: encryptingPassword.text!)
         }
     }
     

@@ -24,12 +24,12 @@ class Messages : MessagesPresenter, MessagesInteractorOutput {
         interactor?.decryptMessage(message: message, password: password)
     }
     
-    func saveMessage(message: EncryptedMessage, password: String) {
+    func saveMessage(message: EncryptedMessage) {
         
         // TODO use coredata to save the messages
     }
     
-    func updateMessage(message: String) {
+    func updateMessage(message: EncryptedMessage) {
         
         //
     }

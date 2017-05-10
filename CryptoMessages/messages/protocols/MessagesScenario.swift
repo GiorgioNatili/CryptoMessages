@@ -19,8 +19,8 @@ protocol MessagesPresenter {
      * (how the presenter should be known from the view)
      */
     func decryptMessage(message: EncryptedMessage, password: String)
-    func saveMessage(message: EncryptedMessage, password: String)
-    func updateMessage(message: String)
+    func saveMessage(message: EncryptedMessage)
+    func updateMessage(message: EncryptedMessage)
 }
 
 protocol MessagesView {
