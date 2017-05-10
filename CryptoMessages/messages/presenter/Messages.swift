@@ -54,7 +54,7 @@ class Messages : MessagesPresenter, MessagesInteractorOutput {
     // MARK: - MessagesInteractorOutput implementation
     func decryptDidFailed(error: String) {
         
-        //
+       view?.showMessageContent(message: error)
     }
     
     func getAllMessagesDidSucceeded(messages: [EncryptedMessage]) {

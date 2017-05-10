@@ -16,6 +16,7 @@ class MockMessagesInteractorOutput : MessagesInteractorOutput {
         self._decryptDidFailedShouldHaveBeenCalled = false
         self._saveDidSucceededShouldHaveBeenCalled = false
         self._decryptDidSucceededShouldHaveBeenCalled = false
+        self._getAllMessagesDidSucceededHaveBeenCalled = false
     }
     
     private var _decryptDidFailedShouldHaveBeenCalled: Bool
@@ -39,6 +40,13 @@ class MockMessagesInteractorOutput : MessagesInteractorOutput {
         }
     }
     
+    private var _getAllMessagesDidSucceededHaveBeenCalled: Bool
+    var getAllMessagesDidSucceededHaveBeenCalled: Bool {
+        get {
+            return _getAllMessagesDidSucceededHaveBeenCalled
+        }
+    }
+    
     func decryptDidFailed(error: String) {
         
         _decryptDidFailedShouldHaveBeenCalled = true
@@ -52,6 +60,11 @@ class MockMessagesInteractorOutput : MessagesInteractorOutput {
     func saveDidSucceeded(message: EncryptedMessage) {
         
         _decryptDidSucceededShouldHaveBeenCalled = true
+    }
+    
+    func getAllMessagesDidSucceeded(messages: [EncryptedMessage]) {
+        
+        _decryptDidFailedShouldHaveBeenCalled = true
     }
     
 }

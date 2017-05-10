@@ -12,9 +12,7 @@ import Nimble
 @testable import CryptoMessages
 
 class AuthenticationViewControllerTest: QuickSpec {
-    
-    var viewController: AuthenticationViewController!
-    
+        
     override func spec() {
         
         var viewController: AuthenticationViewController!

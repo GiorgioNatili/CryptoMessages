@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension MessagesViewController: UITableViewDataSource {
+extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Table view data source
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -23,6 +23,9 @@ extension MessagesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let message = allMessages[indexPath.row]
+        selectedMessage = message
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
