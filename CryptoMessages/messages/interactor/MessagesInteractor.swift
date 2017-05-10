@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import RxSwift
 
 class MessagesInteractor: MessagesInteractorInput {
     
+    private let bag = DisposeBag()
     var presenter: MessagesInteractorOutput?
     var services: MessagesService
     
@@ -22,10 +24,31 @@ class MessagesInteractor: MessagesInteractorInput {
     func saveMessage(message: EncryptedMessage) {
         
         services.saveMessage(message: message)
-            .subscribe {
+            .subscribe (onNext: { data in
                 
-                self.presenter?.saveDidSucceeded(message: message)
-        }
+                self.presenter?.saveDidSucceeded(message: data)
+            })
+            .addDisposableTo(bag)
+    }
+    
+    func getAllMessages() {
+        
+        services.allMessages()
+            .subscribe (onNext: { data in
+                
+                self.presenter?.getAllMessagesDidSucceeded(messages: data)
+            })
+            .addDisposableTo(bag)
+            }
+    
+    func updateMessage(message: EncryptedMessage) {
+        
+        services.updateMessage(message: message)
+            .subscribe (onNext: { data in
+                
+                self.presenter?.saveDidSucceeded(message: data)
+            })
+            .addDisposableTo(bag)
     }
     
     func decryptMessage(message:EncryptedMessage, password: String) {

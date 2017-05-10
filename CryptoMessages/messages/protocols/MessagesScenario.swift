@@ -18,6 +18,7 @@ protocol MessagesPresenter {
      * Communication VIEW -> PRESENTER
      * (how the presenter should be known from the view)
      */
+    func getAllMessages()
     func decryptMessage(message: EncryptedMessage, password: String)
     func saveMessage(message: EncryptedMessage)
     func updateMessage(message: EncryptedMessage)
@@ -31,6 +32,8 @@ protocol MessagesView {
      * Communication PRESENTER -> VIEW
      * (how the view should be known from the presenter)
      */
+    func refreshMessages()
+    func showErrorMessage(message: String)
     func showMessages(data: [EncryptedMessage])
     func showMessageContent(message: String)
     func allowSaveMessage(canSave: Bool)
@@ -44,6 +47,7 @@ protocol MessagesInteractorOutput {
      * (completion handlers impelemented by the presenter,
      * this is how the presenter should be known from the interactor)
      */
+    func getAllMessagesDidSucceeded(messages: [EncryptedMessage])
     func saveDidSucceeded(message: EncryptedMessage)
     func decryptDidSucceeded(content: String)
     func decryptDidFailed(error: String)
@@ -57,7 +61,9 @@ protocol MessagesInteractorInput {
      * Communication PRESENTER -> INTERACTOR
      * (how the interactor should be known from the presenter)
      */
+    func getAllMessages()
     func saveMessage(message: EncryptedMessage)
+    func updateMessage(message: EncryptedMessage)
     func decryptMessage(message: EncryptedMessage, password: String)
 }
 
