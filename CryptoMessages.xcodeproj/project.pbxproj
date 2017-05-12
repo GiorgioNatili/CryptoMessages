@@ -48,6 +48,7 @@
 		BACD7BB61EC29B3400D3E18A /* MockMessagesInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACD7BB51EC29B3300D3E18A /* MockMessagesInteractorOutput.swift */; };
 		BACD7BBA1EC2B3AE00D3E18A /* MessagesViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACD7BB91EC2B3AE00D3E18A /* MessagesViewController+Extension.swift */; };
 		BACD7BBC1EC2C4C500D3E18A /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACD7BBB1EC2C4C500D3E18A /* MessageTableViewCell.swift */; };
+		BAFD0BD31EC5647800F40116 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFD0BD21EC5647800F40116 /* Int+Extension.swift */; };
 		D148C5C5C752F67D498D7A9F /* Pods_CryptoMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5048D4BC8FB052AE2D4685D /* Pods_CryptoMessages.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +123,7 @@
 		BACD7BB51EC29B3300D3E18A /* MockMessagesInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMessagesInteractorOutput.swift; sourceTree = "<group>"; };
 		BACD7BB91EC2B3AE00D3E18A /* MessagesViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MessagesViewController+Extension.swift"; sourceTree = "<group>"; };
 		BACD7BBB1EC2C4C500D3E18A /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		BAFD0BD21EC5647800F40116 /* Int+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		C3755EAEBAEBC9720CF188B9 /* Pods-CryptoMessagesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMessagesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoMessagesUITests/Pods-CryptoMessagesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -379,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				BA4117291EBFAB300027D82B /* Strings+Extension.swift */,
+				BAFD0BD21EC5647800F40116 /* Int+Extension.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				BA41173E1EC0C5DF0027D82B /* MessagesViewController.swift in Sources */,
 				BA4117361EBFF60F0027D82B /* AuthenticationInitizalization.swift in Sources */,
 				BABF668B1EC265B2006A819B /* LocalStorageGateway.swift in Sources */,
+				BAFD0BD31EC5647800F40116 /* Int+Extension.swift in Sources */,
 				BA41171B1EBF9BF20027D82B /* AuthenticationServices.swift in Sources */,
 				BA41172C1EBFAD9F0027D82B /* FirebaseAuthentication.swift in Sources */,
 				BA41171F1EBFA1130027D82B /* AuthenticationViewController.swift in Sources */,

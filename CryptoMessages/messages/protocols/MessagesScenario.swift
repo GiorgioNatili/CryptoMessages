@@ -20,7 +20,7 @@ protocol MessagesPresenter {
      */
     func getAllMessages()
     func decryptMessage(message: EncryptedMessage, password: String)
-    func saveMessage(message: EncryptedMessage)
+    func saveMessage(content: String?, password: String?)
     func updateMessage(message: EncryptedMessage)
 }
 
@@ -32,8 +32,9 @@ protocol MessagesView {
      * Communication PRESENTER -> VIEW
      * (how the view should be known from the presenter)
      */
-    func refreshMessages()
+    func refreshMessages(message: EncryptedMessage)
     func showErrorMessage(message: String)
+    func enableSaving()
     func showMessages(data: [EncryptedMessage])
     func showMessageContent(message: String)
     func allowSaveMessage(canSave: Bool)
@@ -62,7 +63,7 @@ protocol MessagesInteractorInput {
      * (how the interactor should be known from the presenter)
      */
     func getAllMessages()
-    func saveMessage(message: EncryptedMessage)
+    func saveMessage(content: String, password: String)
     func updateMessage(message: EncryptedMessage)
     func decryptMessage(message: EncryptedMessage, password: String)
 }

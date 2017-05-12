@@ -21,9 +21,9 @@ class MessagesInteractor: MessagesInteractorInput {
     }
     
     // MARK: - MessageInteractorInput implementation
-    func saveMessage(message: EncryptedMessage) {
+    func saveMessage(content: String, password: String) {
         
-        services.saveMessage(message: message)
+        services.saveMessage(content: content, password: password)
             .subscribe (onNext: { data in
                 
                 self.presenter?.saveDidSucceeded(message: data)

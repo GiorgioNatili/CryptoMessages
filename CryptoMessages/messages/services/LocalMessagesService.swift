@@ -43,13 +43,13 @@ class LocalMessageService: MessagesService {
         }
     }
     
-    func saveMessage(message: EncryptedMessage) -> Observable<EncryptedMessage> {
+    func saveMessage(content: String, password: String) -> Observable<EncryptedMessage> {
         
         return Observable.create { observer in
             
             do {
                 
-                let newMessage = try self.gateway.manageAccessToContext(handler: self.gateway.saveMessageOnLocalStorage(message: message))
+                let newMessage = try self.gateway.manageAccessToContext(handler: self.gateway.saveMessageOnLocalStorage(content: content, password: password))
                 
                 observer.onNext(newMessage)
                 observer.onCompleted()

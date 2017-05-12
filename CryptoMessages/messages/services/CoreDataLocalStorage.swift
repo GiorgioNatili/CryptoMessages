@@ -43,15 +43,16 @@ class CoreDataLocalStorage : LocalStorageGateway {
         }
     }
     
-    func saveMessageOnLocalStorage(message: EncryptedMessage) throws -> ((_ : NSManagedObjectContext ) throws -> EncryptedMessage) {
+    func saveMessageOnLocalStorage(content: String, password: String) throws -> ((_ : NSManagedObjectContext ) throws -> EncryptedMessage) {
         
         return { (managedContext: NSManagedObjectContext) throws -> EncryptedMessage in
             
             let entity = NSEntityDescription.entity(forEntityName: "EncryptedMessage", in: managedContext)!
             let newMessage = NSManagedObject(entity: entity, insertInto: managedContext) as! EncryptedMessage
             
-            newMessage.setValue(message.content, forKeyPath: "content")
-            newMessage.setValue(message.password, forKeyPath: "password")
+            newMessage.id = Int32(Int(0...99999999))
+            newMessage.setValue(content, forKeyPath: "content")
+            newMessage.setValue(password, forKeyPath: "password")
             
             do {
                 
@@ -70,7 +71,7 @@ class CoreDataLocalStorage : LocalStorageGateway {
         return { (managedContext: NSManagedObjectContext) throws -> EncryptedMessage in
             
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "EncryptedMessage")
-            fetchRequest.predicate = NSPredicate(format: "id = %@", message.id)
+            fetchRequest.predicate = NSPredicate(format: "id == %i", message.id)
             
             if let fetchResults = try managedContext.fetch(fetchRequest) as? [EncryptedMessage] {
                 

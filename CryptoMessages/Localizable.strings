@@ -14,8 +14,10 @@
 "MISSING_PASSWORD"              = "Password is required";
 "LOGIN"                         = "Login";
 "ENCRYPT"                       = "Password";
+"TYPE_MESSAGE"                  = "Type the message, a password and save";
 "SAVE_MESSAGE"                  = "Save";
-"ENCRYPT_MESSAGE"               = "Encrypt";
+"DECRYPT_MESSAGE"               = "Decrtypt";
+"DECRYPT_MESSAGE_INFO"          = "Type the message password";
 "PASSWORD_DONT_MATCH"           = "Passwords doesn't match";
 "UPDATE_MESSAGE_FAILDED"        = "Error when updating";
 "SAVE_MESSAGE_FAILDED"          = "Error when saving";

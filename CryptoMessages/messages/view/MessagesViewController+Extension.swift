@@ -27,6 +27,8 @@ extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
         let message = allMessages[indexPath.row]
         selectedMessage = message
         
+        prepareForDecryption()
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

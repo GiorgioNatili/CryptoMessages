@@ -14,6 +14,7 @@ class MessagesViewController: UIViewController, MessagesView {
     // MARK: - UI Elements
     
     @IBOutlet weak var encryptLabel: UILabel!
+    @IBOutlet weak var encryptInfoLabel: UILabel!
     @IBOutlet weak var handleEncryptButton: UIButton!
     @IBOutlet weak var saveMessageButton: UIButton!
     @IBOutlet weak var messageContentTextView: UITextView!
@@ -43,9 +44,10 @@ class MessagesViewController: UIViewController, MessagesView {
     func updateContent() {
         
         encryptLabel.text = "ENCRYPT".localized
+        encryptInfoLabel.text = "TYPE_MESSAGE".localized
         
         saveMessageButton.setTitle("SAVE_MESSAGE".localized, for: .normal)
-        handleEncryptButton.setTitle("ENCRYPT_MESSAGE".localized, for: .normal)
+        handleEncryptButton.setTitle("DECRYPT_MESSAGE".localized, for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,28 +56,15 @@ class MessagesViewController: UIViewController, MessagesView {
     }
     
     // MARK: - User interaction
-    
     @IBAction func doSaveMessage(_ sender: Any) {
         
         if let message = selectedMessage {
             
+            message.content = messageContentTextView.text
             presenter?.updateMessage(message: message)
         } else {
             
-            // TODO move the buidling in a factory
-            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-                
-                let managedContext = appDelegate.persistentContainer.viewContext
-                
-                let entity = NSEntityDescription.entity(forEntityName: "EncryptedMessage", in: managedContext)
-                let newMessage = EncryptedMessage(entity: entity!, insertInto: managedContext)
-                
-                newMessage.id = Int32(Int(arc4random_uniform(3)))
-                newMessage.content = messageContentTextView.text
-                newMessage.password = encryptingPasswordTextField.text
-                
-                presenter?.saveMessage(message: newMessage)
-            }
+            presenter?.saveMessage(content: messageContentTextView.text, password: encryptingPasswordTextField.text!)
         }
     }
     
@@ -85,6 +74,17 @@ class MessagesViewController: UIViewController, MessagesView {
         
             presenter?.decryptMessage(message: message, password: encryptingPasswordTextField.text!)
         }
+    }
+    
+    // MARK: - Inernal methods
+    func prepareForDecryption() {
+        
+        handleEncryptButton.isEnabled = true
+        saveMessageButton.isEnabled = false
+        messageContentTextView.isEditable = false
+        
+        encryptingPasswordTextField.text = ""
+        messageContentTextView.text = "DECRYPT_MESSAGE_INFO".localized
     }
     
     /*
@@ -100,25 +100,36 @@ class MessagesViewController: UIViewController, MessagesView {
     // MARK: - MessagesView implementation
     func showMessages(data: [EncryptedMessage]) {
         
-        // TODO UITableViewDataSource
         allMessages = data
         messagesTable.reloadData()
     }
     
     func showErrorMessage(message: String) {
         
-        // TODO implement error
-        print(message)
+        messageContentTextView.text = message
     }
     
-    func refreshMessages() {
+    func resetUnselectedMessage() {
         
+        handleEncryptButton.isEnabled = false
+        selectedMessage = nil
+    }
+    
+    func refreshMessages(message: EncryptedMessage) {
+        
+        allMessages.append(message)
         messagesTable.reloadData()
     }
     
     func showMessageContent(message: String) {
         
         messageContentTextView.text = message
+    }
+    
+    func enableSaving() {
+        
+        messageContentTextView.isEditable = true
+        saveMessageButton.isEnabled = true
     }
     
     func allowSaveMessage(canSave: Bool) {
@@ -128,7 +139,7 @@ class MessagesViewController: UIViewController, MessagesView {
     
     func allowDecryptMessage(status: Bool) {
         
-        handleEncryptButton.isHidden = status
+        handleEncryptButton.isEnabled = status
     }
 }
 

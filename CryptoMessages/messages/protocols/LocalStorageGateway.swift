@@ -13,6 +13,6 @@ protocol LocalStorageGateway {
     
     func manageAccessToContext<T>(handler: (_ : NSManagedObjectContext) throws -> T) throws -> T 
     func fetchMessagesOnLocalStorage() throws -> ((_ : NSManagedObjectContext ) throws -> [EncryptedMessage])
-    func saveMessageOnLocalStorage(message: EncryptedMessage) throws -> ((_ : NSManagedObjectContext ) throws -> EncryptedMessage)
+    func saveMessageOnLocalStorage(content: String, password: String) throws -> ((_ : NSManagedObjectContext ) throws -> EncryptedMessage)
     func updateMessageOnLocalStorage(message: EncryptedMessage) throws -> ((_ : NSManagedObjectContext ) throws -> EncryptedMessage)
 }

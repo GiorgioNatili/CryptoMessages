@@ -24,11 +24,11 @@ class Messages : MessagesPresenter, MessagesInteractorOutput {
         interactor?.decryptMessage(message: message, password: password)
     }
     
-    func saveMessage(message: EncryptedMessage) {
-        
-        if let currentInteractor = interactor {
+    func saveMessage(content: String?, password: String?) {
+    
+        if let currentInteractor = interactor, let c = content, let p = password {
             
-            currentInteractor.saveMessage(message: message)
+            currentInteractor.saveMessage(content: c, password: p)
         } else {
             
             view?.showErrorMessage(message: "SAVE_MESSAGE_FAILDED".localized)
@@ -54,7 +54,7 @@ class Messages : MessagesPresenter, MessagesInteractorOutput {
     // MARK: - MessagesInteractorOutput implementation
     func decryptDidFailed(error: String) {
         
-       view?.showMessageContent(message: error)
+        view?.showErrorMessage(message: error)
     }
     
     func getAllMessagesDidSucceeded(messages: [EncryptedMessage]) {
@@ -64,11 +64,13 @@ class Messages : MessagesPresenter, MessagesInteractorOutput {
     
     func saveDidSucceeded(message: EncryptedMessage) {
         
-        view?.refreshMessages()
+        view?.refreshMessages(message: message)
     }
     
     func decryptDidSucceeded(content: String) {
         
-         view?.showMessageContent(message: content)
+        view?.showMessageContent(message: content)
+        view?.enableSaving()
+        view?.allowDecryptMessage(status: false)
     }
 }
